@@ -21,7 +21,7 @@ def main(inputFile,queryLocId,d1,d2):
     xPos = 1
     yPos = 2
     categoryPos = 3
-    pos = []
+    headerPos = []
     for item in header:
         switcher = {
             "LocId": 0,
@@ -29,11 +29,11 @@ def main(inputFile,queryLocId,d1,d2):
             "Longitude": 2,
             "Category": 3,
         }
-        pos.append(switcher.get(item))
-    locIdPos = pos[0]
-    xPos = pos[1]
-    yPos = pos[2]
-    categoryPos = pos[3]
+        headerPos.append(switcher.get(item))
+    locIdPos = headerPos[0]
+    xPos = headerPos[1]
+    yPos = headerPos[2]
+    categoryPos = headerPos[3]
 
     # compare the locId input with locId in locationList to add x, y, category of that locId to a list
     def compareLoc(locId):
