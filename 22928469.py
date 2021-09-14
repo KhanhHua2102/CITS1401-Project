@@ -135,7 +135,7 @@ def main(inputFile,queryLocId,d1,d2):
 
 # IMPORTANT: handle exeptions, also delete print(), main()
 # NEED TO REMOVE 
-locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/OneDrive - The University of Western Australia/UWA Learning/Semester 2/CITS1401/Project 1/Locations-sample-Project1 copy.csv", "L83", "1.5", 2.2)
+locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/OneDrive - The University of Western Australia/UWA Learning/Semester 2/CITS1401/Project 1/Locations-sample-Project1.csv", "L83", "1.5", 2.2)
 print(locList)
 print(simLocList)
 print(distSorted)
