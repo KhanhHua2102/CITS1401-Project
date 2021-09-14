@@ -125,7 +125,6 @@ def main(inputFile,queryLocId,d1,d2):
     # return avgstd list
     avgstd = []
     def avgstdFunc():
-        distSorted = distSortedFunc()
         avg = average(distSorted)
         std = standardDeviation(distSorted)
         avgstd.append(avg)
