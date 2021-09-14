@@ -16,7 +16,7 @@ def main(inputFile,queryLocId,d1,d2):
         for line in temp:
             locationList.append(line[:-1].split(","))
 
-    # define column position
+    # define column position in case of random header
     locIdPos = 0
     xPos = 1
     yPos = 2
