@@ -17,10 +17,7 @@ def main(inputFile,queryLocId,d1,d2):
             locationList.append(line[:-1].split(","))
 
     # define column position in case of random header
-    locIdPos = 0
-    xPos = 1
-    yPos = 2
-    categoryPos = 3
+    locIdPos, xPos, yPos, categoryPos = 0, 1, 2, 3
     headerPos = []
     for item in header:
         switcher = {
