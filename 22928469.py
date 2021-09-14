@@ -10,7 +10,7 @@ def main(inputFile,queryLocId,d1,d2):
     
     # open input file in read mode and append data into a list
     with open(inputFile, "r") as file:
-        header = file.readline().split(",")          
+        header = file.readline()[:-1].split(",")          
         temp = file.readlines()
         locationList = []
         for line in temp:
@@ -21,22 +21,19 @@ def main(inputFile,queryLocId,d1,d2):
     xPos = 1
     yPos = 2
     categoryPos = 3
-    for index in range(4):
-        if header[index].lower() == "locid":
-            locIdPos = index
-            break
-    for index in range(4):
-        if header[index].lower() == "latitude":
-            xPos = index
-            break
-    for index in range(4):
-        if header[index][:-1].lower() == "longitude":
-            yPos = index
-            break
-    for index in range(4):
-        if header[index].lower() == "category":
-            categoryPos = index
-            break
+    pos = []
+    for item in header:
+        switcher = {
+            "LocId": 0,
+            "Latitude": 1,
+            "Longitude": 2,
+            "Category": 3,
+        }
+        pos.append(switcher.get(item))
+    locIdPos = pos[0]
+    xPos = pos[1]
+    yPos = pos[2]
+    categoryPos = pos[3]
 
     # compare the locId input with locId in locationList to add x, y, category of that locId to a list
     def compareLoc(locId):
