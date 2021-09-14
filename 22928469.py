@@ -12,7 +12,6 @@ def main(inputFile,queryLocId,d1,d2):
     with open(inputFile, "r") as file:
         header = file.readline().split(",")          
         temp = file.readlines()
-        locationListTemp = []
         locationList = []
         for line in temp:
             locationList.append(line[:-1].split(","))
@@ -132,14 +131,4 @@ def main(inputFile,queryLocId,d1,d2):
         return avgstd
 
     return locListFunc(), simLocListFunc(), distSortedFunc(), avgstdFunc()
-
-# IMPORTANT: handle exeptions, also delete print(), main()
-# NEED TO REMOVE 
-locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/OneDrive - The University of Western Australia/UWA Learning/Semester 2/CITS1401/Project 1/Locations-sample-Project1.csv", "L83", "1.5", 2.2)
-print(locList)
-print(simLocList)
-print(distSorted)
-print(avgstd)
-# NEED TO REMOVE
-
 
