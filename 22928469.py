@@ -85,7 +85,7 @@ def main(inputFile,queryLocId,d1,d2):
     def simLocListFunc():
         simLocListStrip = []
         for locId in locList:
-            if compareLoc(locId)[2].lower().strip() == maiinCategory:
+            if compareLoc(locId)[2].lower().strip() == mainCategory:
                 simLocList.append(locId)
         # output strip list
         for locId in simLocList:
