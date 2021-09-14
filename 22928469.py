@@ -58,11 +58,11 @@ def main(inputFile,queryLocId,d1,d2):
 
     # handle duplicated queryLocId and missing data
     def incorretedData(location):
-        locId = location[locIdPos]
-        x = location[xPos]
-        y = location[yPos]
-        category = location[categoryPos]
-        return locId.lower() == queryLocId.lower() or locId[1:] == '' or locId == '' or x == '' or y == '' or category == '' or locId.lower() == "n/a"  or x == "n/a" or y == "n/a" or category.lower() == "n/a"
+        locId = location[locIdPos].strip().lower()
+        x = location[xPos].strip().lower()
+        y = location[yPos].strip().lower()
+        category = location[categoryPos].strip().lower()
+        return locId == queryLocId.lower() or locId[1:] == "" or locId == '' or x == '' or y == '' or category == '' or locId == "n/a"  or x == "n/a" or y == "n/a" or category == "n/a"
 
     # return locList list
     locList = []
@@ -135,7 +135,7 @@ def main(inputFile,queryLocId,d1,d2):
 
 # IMPORTANT: handle exeptions, also delete print(), main()
 # NEED TO REMOVE 
-locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/OneDrive - The University of Western Australia/UWA Learning/Semester 2/CITS1401/Project 1/Locations-sample-Project1 copy.txt", "L83", "1.5", 2.2)
+locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/Documents/GitHub/CITS1401-Project/Locations-sample-Project1 copy.txt", "L83", "1.5", 2.2)
 print(locList)
 print(simLocList)
 print(distSorted)
