@@ -95,7 +95,8 @@ def main(inputFile,queryLocId,d1,d2):
     
     # return the distance to main location point
     def distanceFunc(x1, x2, y1, y2):
-        return round(((((x2 - x1)**2) + (y2 - y1)**2)) ** (1/2), 4)
+        distance = round(((((x2 - x1)**2) + (y2 - y1)**2)) ** (1/2), 4)
+        return distance
 
     # return distSorted list
     distSorted = []
@@ -111,16 +112,18 @@ def main(inputFile,queryLocId,d1,d2):
     def average(input):
         if input == 0 or len(input) == 0:
             return 0
-        return round(sum(input) / len(input), 4)
+        avg = round(sum(input) / len(input), 4)
+        return avg
 
     # calculate the standard deviation
     def standardDeviation(input):
+        accumulate = 0
         if input == 0 or len(input) == 0:
             return 0
-        accumulate = 0
         for element in input:
             accumulate += (element - average(input)) ** 2
-        return round((accumulate / len(input)) ** (1/2), 4)
+        std = round((accumulate / len(input)) ** (1/2), 4)
+        return std
     
     # return avgstd list
     avgstd = []
