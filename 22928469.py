@@ -19,14 +19,18 @@ def main(inputFile,queryLocId,d1,d2):
     # define column position in case of random header
     locIdPos, xPos, yPos, categoryPos = 0, 1, 2, 3
     headerPos = []
-    for item in header:
-        switcher = {
-            "LocId": 0,
-            "Latitude": 1,
-            "Longitude": 2,
-            "Category": 3,
-        }
-        headerPos.append(switcher.get(item))
+    for index in range(4):
+        if header[index].lower() == "locid":
+            headerPos.append(index)
+    for index in range(4):
+        if header[index].lower() == "latitude":
+            headerPos.append(index)
+    for index in range(4):
+        if header[index].lower() == "longitude":
+            headerPos.append(index)
+    for index in range(4):
+        if header[index].lower() == "category":
+            headerPos.append(index)
     locIdPos = headerPos[0]
     xPos = headerPos[1]
     yPos = headerPos[2]
@@ -132,7 +136,7 @@ def main(inputFile,queryLocId,d1,d2):
 
 # IMPORTANT: handle exeptions, also delete print(), main()
 # NEED TO REMOVE 
-locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/Documents/GitHub/CITS1401-Project/Locations-sample-Project1 copy.txt", "L83", "1.5", 2.2)
+locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/Documents/GitHub/CITS1401-Project/Locations-sample-Project1 copy.csv", "L83", "1.5", 2.2)
 print(locList)
 print(simLocList)
 print(distSorted)
