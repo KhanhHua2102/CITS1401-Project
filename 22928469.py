@@ -12,7 +12,6 @@ def main(inputFile,queryLocId,d1,d2):
     with open(inputFile, "r") as file:
         header = file.readline().split(",")          
         temp = file.readlines()
-        locationList = []
         for line in temp:
             locationList.append(line[:-1].split(","))
 
