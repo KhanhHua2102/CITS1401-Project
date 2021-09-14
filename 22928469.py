@@ -117,9 +117,9 @@ def main(inputFile,queryLocId,d1,d2):
 
     # calculate the standard deviation
     def standardDeviation(input):
+        accumulate = 0
         if input == 0 or len(input) == 0:
             return 0
-        accumulate = 0
         for element in input:
             accumulate += (element - average(input)) ** 2
         std = round((accumulate / len(input)) ** (1/2), 4)
