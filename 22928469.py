@@ -57,15 +57,19 @@ def main(inputFile,queryLocId,d1,d2):
         return x1 - d1 < x2 < x1 + d1 and y1 - d2 < y2 < y1 + d2
 
     # handle duplicated queryLocId and missing data
-    def isCorretedData(location):
-        return location[locIdPos].lower() == queryLocId.lower() or location[locIdPos][1:] == '' or location[locIdPos] == '' or location[xPos] == '' or location[yPos] == '' or location[categoryPos] == '' or location[locIdPos].lower() == "n/a"  or location[xPos].lower() == "n/a" or location[yPos].lower() == "n/a" or location[categoryPos].lower() == "n/a"
+    def incorretedData(location):
+        locId = location[locIdPos]
+        x = location[xPos]
+        y = location[yPos]
+        category = location[categoryPos]
+        return locId.lower() == queryLocId.lower() or locId[1:] == '' or locId == '' or x == '' or y == '' or category == '' or locId.lower() == "n/a"  or x == "n/a" or y == "n/a" or category.lower() == "n/a"
 
     # return locList list
     locList = []
     def locListFunc():
         locListStrip = []
         for location in locationList:
-            if isCorretedData(location):
+            if incorretedData(location):
                 continue
             x2 = float(location[xPos])
             y2 = float(location[yPos])
@@ -131,7 +135,7 @@ def main(inputFile,queryLocId,d1,d2):
 
 # IMPORTANT: handle exeptions, also delete print(), main()
 # NEED TO REMOVE 
-locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/OneDrive - The University of Western Australia/UWA Learning/Semester 2/CITS1401/Project 1/Locations-sample-Project1.csv", "L83", "1.5", 2.2)
+locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/OneDrive - The University of Western Australia/UWA Learning/Semester 2/CITS1401/Project 1/Locations-sample-Project1 copy.txt", "L83", "1.5", 2.2)
 print(locList)
 print(simLocList)
 print(distSorted)
