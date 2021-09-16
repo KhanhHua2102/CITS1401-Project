@@ -149,12 +149,3 @@ def main(inputFile,queryLocId,d1,d2):
         return [], [], [], [0,0]
     else:
         return locListFunc(), simLocListFunc(), distSortedFunc(), avgstdFunc()
-
-# IMPORTANT: also delete print(), main()
-# NEED TO REMOVE 
-locList, simLocList, distSorted, avgstd = main("/Users/khanhhuaquang/Documents/GitHub/CITS1401-Project/Locations-sample-Project1 copy.csv", "L83", "1.5", 2.2)
-print(locList)
-print(simLocList)
-print(distSorted)
-print(avgstd)
-# NEED TO REMOVE
