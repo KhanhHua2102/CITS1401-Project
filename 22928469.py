@@ -47,11 +47,16 @@ def main(inputFile,queryLocId,d1,d2):
         return outputList
 
     # process raw parameters to handle exceptions
-    x1 = element(queryLocId)[0]
-    y1 = element(queryLocId)[1]
-    mainCategory = element(queryLocId)[2]
-    d1 = float(d1)
-    d2 = float(d2)
+    error = False
+    if int(queryLocId[1:]) > len(locationList):
+        print("invalid ID")
+        error = True
+    else:
+        x1 = element(queryLocId)[0]
+        y1 = element(queryLocId)[1]
+        mainCategory = element(queryLocId)[2]
+        d1 = float(d1)
+        d2 = float(d2)
 
     # define whether a specific location is in the area
     def isInArea(x1, x2, y1, y2, d1, d2):
