@@ -41,8 +41,11 @@ def main(inputFile,queryLocId,d1,d2):
         outputList = []
         for location in locationList:
             if locId.lower() == location[locIdPos].lower():
-                outputList.append(float(location[xPos]))
-                outputList.append(float(location[yPos]))
+                try:
+                    outputList.append(float(location[xPos]))
+                    outputList.append(float(location[yPos]))
+                except:
+                    continue
                 outputList.append(location[categoryPos].lower())
         return outputList
 
@@ -77,8 +80,11 @@ def main(inputFile,queryLocId,d1,d2):
         for location in locationList:
             if incorretedData(location):
                 continue
-            x2 = float(location[xPos])
-            y2 = float(location[yPos])
+            try:
+                x2 = float(location[xPos])
+                y2 = float(location[yPos])
+            except:
+                continue
             if isInArea(x1, x2, y1, y2, d1, d2):
                 locList.append(location[locIdPos].upper()) 
         # output strip list
